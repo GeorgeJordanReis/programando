@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Soma de Valores Pares e Impares</title>
+</head>
+
+<body>
+    <h1>Soma de Valores Pares e Ímpares</h1>
+    <p>Insira um número inteiro:</p>
+    <input type="text" id="numero" />
+    <button onclick="calcular()">Calcular</button>
+    <p id="resultado"></p>
+
+    <script>
+        function calcular() {
+            const numero = parseInt(document.getElementById("numero").value);
+            let par = 0;
+            let impar = 0;
+
+            for (let i = 1; i <= numero; i++) {
+                if (i % 2 === 0) {
+                    par += i;
+                } else {
+                    impar += i;
+                }
+            }
+
+            document.getElementById("resultado").innerHTML = "soma dos pares é: " + par + "<br>soma dos impares é: " + impar;
+        }
+    </script>
+</body>
+
+</html>
+
+</body>
+
+</html>

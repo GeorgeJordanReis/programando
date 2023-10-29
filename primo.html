@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Verificador de Números Primos</title>
+</head>
+
+<body>
+    <h1>Verificador de Números Primos</h1>
+    <p>Insira um número inteiro:</p>
+    <input type="text" id="numero" />
+    <button onclick="primo()">Verificar</button>
+    <p id="resultado"></p>
+
+    <script>
+        function primo() {
+            const numero = parseInt(document.getElementById("numero").value);
+
+            if (numero <= 1) {
+                document.getElementById("resultado").innerHTML = "O número não é primo.";
+                return;
+            }
+
+            let Primo = true;
+
+            /*dei uma pescada nesse. procurei se tinha alguma forma de pegar a raiz quadrada de um número e achei o Math.sqrt
+            deve ter outra forma de fazer, mas sei que para descobrir se um número é primo ou não, basta dividir o número
+            por 2 até a sua raiz quadrada.
+            se achar algum divisor, o número não é primo
+            se não achar nenhum divisor, o número é primo 
+            ex: se o usuário inserir 100- a raiz de 100 é 10 - então vai ser identificado todos os números entre 2 e 10 que são divisores de 100
+            que no caso são - 2, 4, 5 e 10 - Então 100 não é primo
+            ex²: se o usuário inserir 103- a raiz de 103 é 10.14 e alguns quebrados que não importam. novamente vai ser identificado entre 2 e 10 quais são divisores
+            neste caso nenhum. então 103 é primo*/
+
+            for (let i = 2; i <= Math.sqrt(numero); i++) {
+                if (numero % i === 0) {
+                    Primo = false;
+                    break;
+                }
+            }
+
+            if (Primo) {
+                document.getElementById("resultado").innerHTML = "O número é primo.";
+            } else {
+                document.getElementById("resultado").innerHTML = "O número não é primo.";
+            }
+        }
+    </script>
+</body>
+
+</html>

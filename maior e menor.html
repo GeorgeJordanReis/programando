@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Encontrar o Maior e o Menor Número</title>
+    <style>
+        #result {
+            font-size: 18px;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Encontre o Maior e o Menor Número</h1>
+    <p>Informe três números:</p>
+
+    <pre
+        style="font-family: Arial, Helvetica, sans-serif; font-size: small;">primeiro número:                       segundo número:                      terceiro número:  </pre>
+    <input type="text" id="num1" placeholder="Número 1">
+    <input type="text" id="num2" placeholder="Número 2">
+    <input type="text" id="num3" placeholder="Número 3">
+    <button onclick="maiorMenor()">Encontrar</button>
+
+    <p id="result"></p>
+
+    <script>
+        function maiorMenor() {
+            let num1 = document.getElementById("num1").value;
+            num2 = document.getElementById("num2").value;
+            num3 = document.getElementById("num3").value;
+
+
+
+            let maior = Math.max(num1, num2, num3);
+            menor = Math.min(num1, num2, num3);
+
+            let result = "O maior número é: " + maior + "<br>O menor número é: " + menor;
+            document.getElementById("result").innerHTML = result;
+        }
+    </script>
+</body>
+
+</html>
